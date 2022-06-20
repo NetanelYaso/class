@@ -63,7 +63,7 @@
 //     console.log(item);
 // })
 
-class Teacher {
+ class Teacher {
     constructor(firstName, lastName, grade, email){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -74,18 +74,32 @@ class Teacher {
 
 teacherAray = [];
 function sendTeacher(){
-    const teacher = new Teacher(firstName.value, lastName.value, grade.value, email.value);
-    console.log(teacher);
+    const teacher1 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
+    const teacher2 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
+    const teacher3 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
+    const teacher4 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
     firstName.value = "";
     lastName.value = "";
     grade.value = "";
     email.value = "";
-    
-    if(teacherAray.length == 2){
-        teacherAray.forEach(item => {
-            for(let key in item){
-                table.innerHTML += `<tr> <td> ${item[key]} </td> </tr>`
-            }
-        });
+    teacherAray.push(teacher1,teacher2,teacher3,teacher4)
+    teacherAray.forEach(item => {
+        tbody1.innerHTML += 
+        `<tr> <td> ${item.firstName}</td> <td> ${item.lastName} </td> <td> ${item.grade} </td> <td> ${item.email} </td> </tr> `
+    });
+}
+
+
+class Course {
+    constructor(name, isthereteacher, gradelist, studentslist) {
+        this.name = name;
+        this.isthereteacher = isthereteacher;
+        this.gradelist = gradelist;
+        this.studentslist = studentslist;
     }
 }
+
+let corseArray = [];
+const course = new Course("full stuck",true,"100,95,77", "netanel,asaf,chen,yaso");
+corseArray.push(course);
+console.log(corseArray);
