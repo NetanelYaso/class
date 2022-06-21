@@ -63,31 +63,31 @@
 //     console.log(item);
 // })
 
- class Teacher {
-    constructor(firstName, lastName, grade, email){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.grade = grade;
-        this.email = email
-    }
-}
+//  class Teacher {
+//     constructor(firstName, lastName, grade, email){
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.grade = grade;
+//         this.email = email
+//     }
+// }
 
-teacherAray = [];
-function sendTeacher(){
-    const teacher1 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
-    const teacher2 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
-    const teacher3 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
-    const teacher4 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
-    firstName.value = "";
-    lastName.value = "";
-    grade.value = "";
-    email.value = "";
-    teacherAray.push(teacher1,teacher2,teacher3,teacher4)
-    teacherAray.forEach(item => {
-        tbody1.innerHTML += 
-        `<tr> <td> ${item.firstName}</td> <td> ${item.lastName} </td> <td> ${item.grade} </td> <td> ${item.email} </td> </tr> `
-    });
-}
+// teacherAray = [];
+// function sendTeacher(){
+//     const teacher1 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
+//     const teacher2 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
+//     const teacher3 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
+//     const teacher4 = new Teacher(firstName.value, lastName.value, grade.value, email.value);
+//     firstName.value = "";
+//     lastName.value = "";
+//     grade.value = "";
+//     email.value = "";
+//     teacherAray.push(teacher1,teacher2,teacher3,teacher4)
+//     teacherAray.forEach(item => {
+//         tbody1.innerHTML += 
+//         `<tr><td> ${item.firstName}</td> <td> ${item.lastName} </td> <td> ${item.grade} </td> <td> ${item.email} </td></tr> `
+//     });
+// }
 
 
 class Course {
@@ -100,6 +100,12 @@ class Course {
 }
 
 let corseArray = [];
-const course = new Course("full stuck",true,"100,95,77", "netanel,asaf,chen,yaso");
+const course = new Course("full stuck", true, "100,95,77", "netanel,asaf,chen,yaso");
 corseArray.push(course);
 console.log(corseArray);
+for(key in course){
+    h1_id.innerHTML += `${course[key]} <br>`;
+    corseArray.sort();
+    
+}
+
