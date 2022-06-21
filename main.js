@@ -90,22 +90,66 @@
 // }
 
 
-class Course {
-    constructor(name, isthereteacher, gradelist, studentslist) {
-        this.name = name;
-        this.isthereteacher = isthereteacher;
-        this.gradelist = gradelist;
-        this.studentslist = studentslist;
+// class Course {
+//     constructor(name, isthereteacher, gradelist, studentslist) {
+//         this.name = name;
+//         this.isthereteacher = isthereteacher;
+//         this.gradelist = gradelist;
+//         this.studentslist = studentslist;
+//     }
+// }
+
+// const course = new Course("full stuck", true, [100,95,77,80], ["netanel","asaf","chen","yaso"]);
+// for(key in course){
+//     h1_id.innerHTML += `${course[key]} <br>`;
+// }
+// course.studentslist.sort().forEach( student=>{
+//     h1_id.innerHTML += `<p>${student} </p>`
+// }
+// )
+// course.gradelist.sort((a,b)=>b-a).forEach( grade=>{
+//     h1_id.innerHTML += `<p>${grade} </p>`
+// }
+// )
+
+// תרגילי הורשה 
+
+class Student{
+    myStudent(){
+        console.log(this.studentname,this.grade,this.id);
+    }
+    constructor(studentname, grade, id){
+        this.studentname = studentname;
+        this.grade = grade;
+        this.id = id;
     }
 }
 
-let corseArray = [];
-const course = new Course("full stuck", true, "100,95,77", "netanel,asaf,chen,yaso");
-corseArray.push(course);
-console.log(corseArray);
-for(key in course){
-    h1_id.innerHTML += `${course[key]} <br>`;
-    corseArray.sort();
-    
-}
+const student1 = new Student("netanel",12, "209165695");
+const student2 = new Student("yaso",15, "209154859");
+console.log(student1);
+console.log(student2);
 
+student1.myStudent();
+
+class CollegeStudent extends Student{}
+const collegestudent1 = new CollegeStudent("daniel",20,"209165695");
+console.log(collegestudent1);
+
+class HighscoolStudent extends Student{
+    constructor(studentname, grade, id,city,phonenumber){
+        super(studentname, grade, id);
+        this.city = city;
+        this.phonenumber = phonenumber;
+    }
+}
+const highscoolstudent1 = new CollegeStudent("or",18,"209165695");
+console.log(highscoolstudent1);
+const highscoolstudent2 = new CollegeStudent("yaso",17,"209165695","jerusalem","0543518991");
+console.log(highscoolstudent2);
+
+class MiddleSchoolStudent extends Student{}
+
+const middleschoolstudent1 = new Student("netanel",16, "209165695");
+console.log(middleschoolstudent1);
+middleschoolstudent1.myStudent()
